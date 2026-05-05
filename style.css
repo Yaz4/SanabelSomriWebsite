@@ -1,0 +1,97 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* Navbar Customization */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    /* Fallback background color */
+    background-color: #2c3e50;
+    /* Gradient overlay */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./sfondo calligrafia.png');
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.hero-section h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Section Padding */
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Service Cards */
+.service-card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    background: white;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.service-card i {
+    color: #3498db; /* Primary color */
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact-item {
+    text-align: center;
+    padding: 20px;
+    min-width: 200px;
+}
+
+.contact-item i {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.contact-item a {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #3498db;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: rgba(255,255,255,0.7);
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
