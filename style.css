@@ -1,97 +1,329 @@
-/* Global Styles */
+:root {
+    --primary-color: #d4af37; /* Warm Gold */
+    --primary-hover: #b5952f;
+    --dark-navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --bg-light: #f8f9fa;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
-    color: #333;
+    color: var(--light-navy);
+    background-color: var(--bg-light);
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--dark-navy);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-navy);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--lightest-navy);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--slate);
 }
 
 /* Navbar Customization */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: rgba(10, 25, 47, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 15px 0;
 }
 
 .navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary-color) !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: var(--lightest-slate) !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
 }
 
 /* Hero Section */
 .hero-section {
-    /* Fallback background color */
-    background-color: #2c3e50;
-    /* Gradient overlay */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./sfondo_calligrafia.png');
-    color: white;
+    background-color: var(--dark-navy);
+    background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('./sfondo_calligrafia.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    color: var(--lightest-slate);
+    min-height: 100vh;
     padding: 150px 0;
     text-align: center;
     margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-section h1 {
-    color: white;
+    color: var(--lightest-slate);
+    font-size: 4.5rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-section .lead {
+    color: var(--slate);
     font-size: 1.5rem;
-    margin-bottom: 30px;
-    font-weight: 300;
+    margin-bottom: 40px;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Section Padding */
 .section-padding {
-    padding: 80px 0;
+    padding: 100px 0;
+}
+
+/* Typography elements */
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    color: var(--light-navy);
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-left: 20px;
+}
+
+.section-title::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-right: 20px;
+}
+
+/* Chi Sono Section */
+#chi-sono {
+    background-color: var(--white);
+}
+
+#chi-sono p {
+    font-size: 1.1rem;
+    color: var(--slate);
+    line-height: 1.8;
+}
+
+#chi-sono strong {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 /* Service Cards */
+#servizi {
+    background-color: var(--bg-light);
+}
+
 .service-card {
-    transition: all 0.3s ease;
-    border-radius: 10px;
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px 30px !important;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--dark-navy);
+    transition: all 0.4s ease;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.service-card:hover::before {
     height: 100%;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .service-card i {
-    color: #3498db; /* Primary color */
-    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    transition: all 0.4s ease;
+}
+
+.service-card h4 {
+    color: var(--light-navy);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    transition: all 0.4s ease;
+}
+
+.service-card p {
+    color: var(--slate);
+    transition: all 0.4s ease;
+}
+
+.service-card:hover i,
+.service-card:hover h4,
+.service-card:hover p {
+    color: var(--lightest-slate);
 }
 
 /* Contact Section */
-.contact-item {
-    text-align: center;
-    padding: 20px;
-    min-width: 200px;
+#contatti {
+    background-color: var(--white);
 }
 
-.contact-item i {
-    color: #3498db;
-    margin-bottom: 15px;
+.contact-card {
+    background: var(--dark-navy);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(10, 25, 47, 0.2);
+    color: var(--lightest-slate);
+    border: 1px solid var(--lightest-navy);
 }
 
-.contact-item a {
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
+.contact-card h4 {
+    color: var(--lightest-slate);
+    font-size: 2rem;
 }
 
-.contact-item a:hover {
-    color: #3498db;
+.contact-card p {
+    color: var(--slate);
+    font-size: 1.1rem;
+}
+
+.contact-card i.fa-paper-plane {
+    color: var(--primary-color) !important;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
-    color: rgba(255,255,255,0.7);
-    padding: 30px 0;
-    font-size: 0.9rem;
+    background-color: var(--dark-navy);
+    color: var(--slate);
+    padding: 40px 0;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--lightest-navy);
+}
+
+footer a {
+    color: var(--light-slate) !important;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    .hero-section .lead {
+        font-size: 1.2rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-title::before, .section-title::after {
+        width: 30px;
+    }
 }
